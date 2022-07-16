@@ -1,9 +1,20 @@
-import logo from './logo.svg';
+import {Routes, Route} from 'react-router-dom'
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Page from './pages/Page';
 
 function App() {
   return (
-    <h1 className='text-4xl text-blue-700 p-8'>Welcome!</h1>
+    <>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/page" element={<Page />} />
+    </Routes>
+    <Footer />
+    </>
   );
 }
 
