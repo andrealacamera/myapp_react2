@@ -6,8 +6,9 @@ import logo from '../logo.svg';
 const Header = () => {
   return (
     <header className='flex flex-row justify-between items-center bg-gray-800 text-gray-200'>
-      <Link to='/'>
+      <Link to='/' className='flex flex-row items-center'>
         <img src={logo} alt="logo" width={180} height={180}/>
+        <h1 className='text-3xl text-cyan-50'>myapp_react2</h1>
       </Link>
       <nav>
         <ul className='px-8 flex flex-row gap-4'>
