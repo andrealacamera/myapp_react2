@@ -13,32 +13,9 @@ Here I used the following packages|libs|things (new ones highlighted):
 I follow both the tutorial on Redux Toolkit website and this [video](https://www.youtube.com/watch?v=PmFVQmSSaE4&list=PLQg6GaokU5CyvExiaMgXP_BS5WWNBfZJN&index=15) and I mixed some things: in this app I create a `src/redux` folder and put there every settings of the store (i.e. the store definition, the slicers, etc).
 - 
 ## Configure the store (w/ Redux Toolkit)
-1. Create the store in `src/redux/store.js`
-```js
-import { configureStore } from '@reduxjs/toolkit'
 
-export const store = configureStore({
-  reducer: {},
-})
-```
-
-2. Provide the Redux Store to React in `index.js`
-```js
-...
-import { store } from './redux/store'
-import { Provider } from 'react-redux'
-...
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
-```
-
-3. Create a Redux State Slice
+1. Create a Redux State Slice
 Add a new file named `src/redux/counterSlice.js`. Creating a slice requires a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated.
-
 
 ```js
 import { createSlice } from '@reduxjs/toolkit'
@@ -69,8 +46,7 @@ export default counterSlice.reducer
 
 Redux Toolkit allows us to write "mutating" logic in reducers. It doesn't actually mutate the state because it uses the Immer library, which detects changes to a "draft state" and produces a brand new immutable state based off those changes.
 
-
-4. Add Slice Reducers to the Store `src/redux/store.js`
+2. Configure the Store and Add the Slice Reducer to it `src/redux/store.js`
 
 ```js
 import { configureStore } from '@reduxjs/toolkit'
@@ -83,7 +59,21 @@ export const store = configureStore({
 })
 ```
 
-5. Use Redux State and Actions in React Components
+3. Provide the Redux Store to React in `index.js`
+```js
+...
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+...
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
+```
+
+4. Use Redux State and Actions in React Components
 ```js
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from '../redux/counterSlice'
