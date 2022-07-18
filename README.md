@@ -11,7 +11,7 @@ Here I used the following packages|libs|things (new ones highlighted):
 - [**React Redux**](https://react-redux.js.org/) and [**Redux Toolkit**](https://redux-toolkit.js.org/)
 
 I follow both the tutorial on Redux Toolkit website and this [video](https://www.youtube.com/watch?v=PmFVQmSSaE4&list=PLQg6GaokU5CyvExiaMgXP_BS5WWNBfZJN&index=15) and I mixed some things: in this app I create a `src/redux` folder and put there every settings of the store (i.e. the store definition, the slicers, etc).
-- 
+
 ## Configure the store (w/ Redux Toolkit)
 
 1. Create a Redux State Slice
