@@ -51,7 +51,7 @@ _We export separately the actions and the reducer, because we do not want to exp
 2. Configure the Store and Add the Slice Reducer to it `src/redux/store.js`
 
 ```js
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './counterSlice'
 
 export const store = configureStore({
