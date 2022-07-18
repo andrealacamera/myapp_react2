@@ -44,12 +44,14 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions
 export default counterSlice.reducer
 ```
 
-Redux Toolkit allows us to write "mutating" logic in reducers. It doesn't actually mutate the state because it uses the Immer library, which detects changes to a "draft state" and produces a brand new immutable state based off those changes.
+**Important! Redux Toolkit allows us to write "mutating" logic in reducers. It doesn't actually mutate the state because it uses the Immer library, which detects changes to a "draft state" and produces a brand new immutable state based off those changes**.
+
+_We export separately the actions and the reducer, because we do not want to export the entire slice and then destructure each part of it. In the following we use directly the reducer (as well as the actions)._
 
 2. Configure the Store and Add the Slice Reducer to it `src/redux/store.js`
 
 ```js
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import counterReducer from './counterSlice'
 
 export const store = configureStore({
@@ -58,6 +60,8 @@ export const store = configureStore({
   },
 })
 ```
+
+_If you want to use several slice reducers, `configureStore` will automatically create the root reducer by passing the object `reducer` to the Redux combineReducers utility. You do not should do this by hand._
 
 3. Provide the Redux Store to React in `index.js`
 ```js
@@ -84,10 +88,13 @@ import { decrement, increment } from '../redux/counterSlice'
   <p>Count: {count}</p>
   <button onClick={() => dispatch(increment())}>Increment</button>
   <button onClick={() => dispatch(decrement())}>Decrement</button>
+...
 ```
 
+_Note that you can use `useSelector` in one component and `useDispatch` in another one. The Redux store keeps each component updated._
+
 ---
-## Final notes
+## Some other stuff...
 
 ### **Disable open browser in CRA**
 - Create .env file in the root directory where your package.json file resides;  
