@@ -100,3 +100,15 @@ _Note that you can use `useSelector` in one component and `useDispatch` in anoth
 - Create .env file in the root directory where your package.json file resides;  
 - Add `BROWSER=none` and save the file;
 - run `npm start` as always. 
+
+
+### Fetch data from API
+
+A **thunk** is a specific kind of Redux function that can contain asynchronous logic. Thunks are written using two functions:
+
+- An inside thunk function, which gets `dispatch` and `getState` as arguments.
+- The outside creator function, which creates and returns the thunk function.
+
+Using thunks requires that the `redux-thunk` _middleware_ (a type of plugin for Redux) be added to the Redux store when it's created. 
+Note that Redux Toolkit's `configureStore` function already sets that up for us automatically.
+
