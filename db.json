@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "andrea",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "username": "anna",
+      "password": "54321"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "name": "Comprare la pasta",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "Fare la pizza",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "name": "Ordinare il gelato",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "name": "Mangiare un ghiacciolo",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "name": "Bere la birra",
+      "completed": false
+    },
+    {
+      "id": 6,
+      "name": "Fumare la pipa",
+      "completed": true
+    }
+  ]
+}

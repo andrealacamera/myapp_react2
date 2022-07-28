@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Page from './pages/Page';
 import StarWars from './pages/StarWars';
+import Todos from './components/Todos';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/page" element={<Page />} />
-      <Router path='/starwars' element={<StarWars />} />
+      <Route path='/starwars' element={<StarWars />} />
+      <Route path='/todos' element={<Todos />} />
     </Routes>
     <Footer />
     </>
