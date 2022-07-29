@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+// import { addPlanets, addPeople, addStarships, addVehicles } from './footerSlice';
 
 
 export const swSlice = createApi({
@@ -10,13 +11,15 @@ export const swSlice = createApi({
     getAllPlanets: builder.query({
       query: (page) => `/planets/?page=${page}`,
       transformResponse: res => {
+        // dispatch(addPlanets(res.results.length))
         console.log(res);
         return res;
-      }
+      },
     }),
     getAllPeople: builder.query({
       query: (page) => `/people/?page=${page}`,
       transformResponse: res => {
+        // dispatch(addPeople(res.results.length))
         console.log(res);
         return res;
       }
@@ -24,6 +27,7 @@ export const swSlice = createApi({
     getAllStarships: builder.query({
       query: (page) => `/starships/?page=${page}`,
       transformResponse: res => {
+        // dispatch(addStarships(res.results.length))
         console.log(res);
         return res;
       }
@@ -31,6 +35,7 @@ export const swSlice = createApi({
     getAllVehicles: builder.query({
       query: (page) => `/vehicles/?page=${page}`,
       transformResponse: res => {
+        // dispatch(addVehicles(res.results.length))
         console.log(res);
         return res;
       }

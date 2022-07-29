@@ -14,6 +14,7 @@ const People = () => {
       {isSuccess && 
       <>
         <h1 className="text-4xl m-8">Star Wars People database</h1>
+        <h2 className='textx-xl mx-8 my-2'>People available: {people.count}</h2>
         <div className="m-4 flex flex-row flex-wrap gap-4">
         { people.results.map( (p) => (
           <article key={p.name} className={`w-64 bg-gray-200 rounded-xl border border-gray-400 p-2 ${isFetching ? 'opacity-50' : ''}`}>
@@ -26,7 +27,7 @@ const People = () => {
           )) 
         }
         </div>
-        <Bar data={people} onPrev={() => setPage(page-1)} onNext={() => setPage(page+1)} /> 
+        <Bar data={people} page={page} onPrev={() => setPage(page-1)} onNext={() => setPage(page+1)} onPage={(p) => setPage(p)}/> 
 
       </>
       }
