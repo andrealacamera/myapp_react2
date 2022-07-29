@@ -231,6 +231,6 @@ From here, you can add some other features, such as:
 In the Star Wars page, the data are fetched from [swapi.dev](https://swapi.dev/). 
 
 The main differences between the SW page and the Todos page are: 
-- Different tabs on the page, each one is a component that loads data when mounted. After first run, the data persists on the store and no other fetch is needed. **TBC!!!**
-- Pagination. **WIP**
+- Different tabs on the page, each one is a component that loads data when mounted. After first run, the data persists on the store and no other fetch is needed.
+- Pagination.
 - No mutuations on SW page, only Queries.
