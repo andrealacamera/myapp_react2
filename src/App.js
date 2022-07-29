@@ -5,19 +5,23 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Page from './pages/Page';
 import StarWars from './pages/StarWars';
-import Todos from './components/Todos';
+import Todos from './pages/Todos';
 
 function App() {
   return (
     <>
-    <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/page" element={<Page />} />
-      <Route path='/starwars' element={<StarWars />} />
-      <Route path='/todos' element={<Todos />} />
-    </Routes>
-    <Footer />
+    <div className='flex flex-col min-h-screen'>
+      <Header />
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/page" element={<Page />} />
+          <Route path='/starwars' element={<StarWars />} />
+          <Route path='/todos' element={<Todos />} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useAddTodoMutation, useDeleteTodoMutation, useGetAllTodosQuery, useUpdateTodoMutation } from '../redux/apiSlice'
 
-import { BsArrowUp, BsDashCircleDotted, BsTrashFill} from 'react-icons/bs';
+import { BsArrowUp, BsTrashFill} from 'react-icons/bs';
 
 const Todos = () => {
 
@@ -34,7 +34,7 @@ const Todos = () => {
     <h1 className='text-4xl m-8'>Todo List</h1>
     
     <div className="m-8 flex flex-col gap-8">
-      { isLoading && <p className='animation animate-spin'><BsDashCircleDotted /></p> }
+      { isLoading && <p className='text-xl text-red-500'>Loading the data... </p> }
       { isError && <p> Ooops... {error.status} - {error.error}</p> }
       { isSuccess && (
         <>

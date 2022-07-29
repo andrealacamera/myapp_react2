@@ -1,26 +1,48 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const initialState = {
-  counts: 0,
-  currentPage: 1,
-  results: []
-}
 
-export const swSlice = createSlice({
-  name: 'starwars',
-  initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
-  },
-})
+export const swSlice = createApi({
+  // defaults path is 'api', so all your RTKQ cache data will be stored under state.api.
+  reducerPath: 'starwars',
+  //fetchBaseQuery is a small wrapper around the standard fetch()
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://swapi.dev/api/' }),
+  endpoints: (builder) => ({
+    getAllPlanets: builder.query({
+      query: (page) => `/planets/?page=${page}`,
+      transformResponse: res => {
+        console.log(res);
+        return res;
+      }
+    }),
+    getAllPeople: builder.query({
+      query: (page) => `/people/?page=${page}`,
+      transformResponse: res => {
+        console.log(res);
+        return res;
+      }
+    }),
+    getAllStarships: builder.query({
+      query: (page) => `/starships/?page=${page}`,
+      transformResponse: res => {
+        console.log(res);
+        return res;
+      }
+    }),
+    getAllVehicles: builder.query({
+      query: (page) => `/vehicles/?page=${page}`,
+      transformResponse: res => {
+        console.log(res);
+        return res;
+      }
+    })
+  })
+});
 
-export const { increment, decrement, incrementByAmount } = swSlice.actions
-export default swSlice.reducer
+
+export const { 
+  useGetAllPlanetsQuery,
+  useGetAllPeopleQuery, 
+  useGetAllStarshipsQuery,
+  useGetAllVehiclesQuery
+ } = swSlice
+

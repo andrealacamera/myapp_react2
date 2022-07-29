@@ -94,7 +94,7 @@ import { decrement, increment } from '../redux/counterSlice'
 _Note that you can use `useSelector` in one component and `useDispatch` in another one. The Redux store keeps each component updated._
 
 ---
-## Some other stuff...
+## In this episode...
 
 ### **Disable open browser in CRA**
 - Create .env file in the root directory where your package.json file resides;  
@@ -123,7 +123,7 @@ In order to simulate your API you can use `json-server`.
 
 More details on [this page](https://www.npmjs.com/package/json-server).
 
-### Fetch data from API 2/2
+### Fetch data from API 2/2 - Todos page
 
 **RTK Query** (See [here](https://redux-toolkit.js.org/tutorials/rtk-query) and [here](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics)) eliminates the need to hand-write data fetching & caching logic yourself. See also [this very useful YT video](https://www.youtube.com/watch?v=HyZzCHgG3AY). 
 
@@ -224,3 +224,13 @@ From here, you can add some other features, such as:
 - Change the data by defining and using `mutations`. See [here](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics#creating-posts-with-mutations).
 - Refresh the cached data. Indeed, we need to tell RTK Query to refresh its cached data so that we can see the new data we just added. See [here](https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics#refreshing-cached-data).
 - Transform the response. See the YT video as well as [here](https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#customizing-query-responses-with-transformresponse).
+
+
+### Fetch data from API 2/2 - Star Wars page
+
+In the Star Wars page, the data are fetched from [swapi.dev](https://swapi.dev/). 
+
+The main differences between the SW page and the Todos page are: 
+- Different tabs on the page, each one is a component that loads data when mounted. After first run, the data persists on the store and no other fetch is needed. **TBC!!!**
+- Pagination. **WIP**
+- No mutuations on SW page, only Queries.
