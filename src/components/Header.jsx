@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo from '../logo.svg';
 
@@ -15,6 +15,8 @@ const Header = () => {
           <li><Link to='/'>Home</Link></li>
           {/* <li><Link to='/login'>Login</Link></li> */}
           <li><Link to='/page' >Page</Link></li>
+          <li><Link to='/starwars' >Star Wars</Link></li>
+          <li><Link to='/todos' >Todos</Link></li>
         </ul>
       </nav>
       
